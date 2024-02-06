@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" class="user_input">
+    <button>입력완료</button>
+    <p class="info_box">
+
+    </p>
+</body>
+</html>
+
+<style>
+    input[type="text"]{
+        width: 300px;
+        height: 200px;
+    }
+    .info_box{
+        border: 1px solid #000;
+        width: 500px;
+        height: 500px;
+    }
+</style>
+
+<script>
+    $(document).ready(function(){
+        $('button').on('click',function(){
+            let input_val = $('input').val();
+
+            console.log(input_val)
+
+            $('p').text('<span>'+input_val+'</span>'); //문자로만 적용
+            $('p').html('<span>'+input_val+'</span>'); //태그 속성을 적용
+
+            //태그 안에 있는 속성값을 가져오기 위해서는 prop, attr 로 가져오거나 넣을 수있음
+            $('input').attr('value','gd')
+        });
+    });
+</script>

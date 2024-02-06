@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<!-- minimum-scale=1 : 최소 크기 설정 (기본값 : 0.25, 범위 : 0~10.0), maximum-scale=1 : 최대 크기 설정(최대 배율 범위 : 0~10.0), user-scalable=no : 사용자 단말의 확대기능 사용 유무 선언(yes/no) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="TITLE">
+		<meta property="og:title" content="TITLE">
+		<meta property="og:description" content="TEXT">
+		<meta property="og:image" content="@resource/images/share_1_1200x630.jpg">
+		<meta property="og:url" content="URL">
+	
+		<title>TITLE</title>
+		<link rel="stylesheet" type="text/css" href="./css/reset.css">
+		<!-- 1.11.1 버전 (1.x.x 의 마지막 버전) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<style>
+			.cont_wrap{max-width: 1420px;width: 100%;margin: 0 auto;padding: 50px 0;}
+			.cont_wrap .btnBox{display: flex;justify-content: center;width: 150px;margin: 0 auto 50px;}
+			.cont_wrap .btnBox.disabled{position: relative;display: flex;justify-content: center;margin-bottom: 50px;border-radius: 10px;overflow: hidden;}
+			.cont_wrap .btnBox.disabled::after{content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;border-radius: 10px;background-color: rgba(0,0,0,0.5);}
+			.cont_wrap .btnBox .startBtn{display: flex;align-items: center;justify-content: center;width: 100%;height: 50px;border: 1px solid;border-radius: 10px;}
+			/* .cont_wrap .btnBox.disabled .startBtn{border: 1px solid #ccc;color: #fff;} */
+			.cont_wrap .gameBox{display: flex;flex-direction: column;align-items: center;justify-content: space-around;width: 500px;height: 500px;margin: 0 auto;border: 1px solid;}
+			.cont_wrap .gameBox .game{display: flex;justify-content: space-between;width: 300px;}
+			.cont_wrap .gameBox .game span{display: flex;width: 50px;height: 50px;background-color: #ccc;border-radius: 50%;}
+			.cont_wrap .gameBox .game span.on{background-color: red;}
+			.cont_wrap .gameBox .stopBtn{display: flex;justify-content: center;align-items: center;width: 100px;height: 50px;border: 1px solid;border-radius: 10px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header"></div>
+			<div id="wrap">
+				<div class="container">
+					<div id="sec01" class="sec01 section">
+						<div class="cont_wrap">
+                            <div class="btnBox">
+                                <a href="javascript:void(0)" class="startBtn">EVENT START</a>
+                            </div>
+                            <div class="gameBox">
+								<div class="game">
+									<span class="test1"></span>
+									<span class="test2"></span>
+									<span class="test3"></span>
+								</div>
+								<a href="javascript:void(0);" class="stopBtn">STOP</a>
+							</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<div id="footer"></div>
+		</div>
+		<script>
+			
+			$(document).ready(function(){
+				let success = 2
+				let i = 0;
+				$(document).one('click','.startBtn',function(){
+					$(this).css('background-color','#c5c5c5');
+					$('.test'+ i).addClass('on')
+					let interval =	setInterval(function(){									//인터벌은 적어논 초 마다 계속 무한 반복! 타임아웃은 적어논 초 뒤에 실행!
+						if(i < 4){
+							i++
+							console.log($('.test'+ i))
+							$('.test'+ i).addClass('on')
+						}
+						$('.test'+ i).siblings().removeClass('on')
+						if(i == 3){
+							i = 0
+						}
+					},500)
+					$(document).on('click','.stopBtn',function(){
+						if(i != success){
+							alert('땡!')
+							// setInterval(interval)
+						}else{
+							clearInterval(interval)
+							alert('성공!')
+						}
+					})
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효성 검사</title>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div id="wrapper" class="">
+        <div id="wrap">
+            <div class="container">
+                <div id="sec01" class="sec01 section">
+                    <div class="cont_wrap">
+                        <h1>유효성 검사</h1>
+                        <div>
+                            <label for="user_name">이름</label>
+                            <input type="text" id="user_name" placeholder="이름을 입력해주세요.">
+                        </div>
+                        <div>
+                            <label for="user_number">전화번호</label>
+                            <input type="tel"  id="user_number"placeholder="전화번호를 입력해주세요.">
+                        </div>
+                        <div>
+                            <label for="user_email">이메일</label>
+                            <input type="email" id="user_email" placeholder="이메일을 입력해주세요.">
+                        </div>
+                        <div>
+                            <label for="user_address">주소</label>
+                            <input type="text" id="post_code">
+                            <button class="postnum_btn">우편번호 찾기</button>
+                            <input type="text" id="user_address">
+                            <input type="text" id="user_address_detail">
+                        </div>
+                        <button class="sub_btn">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+
+        var uname = $('#user_name').val();
+        var upnum = $('#user_number').val();
+        var uemail = $('#user_email').val();
+        var upost = $('#post_code').val();
+        var uaddress = $('#user_address').val();
+        var uaddress1 = $('#user_address_detail').val();
+        var regnumber =  
+
+
+        $(document).on('click','.sub_btn' ,function(){
+            if(uname == ''){
+                alert('이름을 입력해주세요.')
+                return false;
+                if(umane.test() ){
+
+                }
+            }
+            if(upnum == ''){
+                alert('전화번호를 입력해주세요.')
+                return false;
+            }
+            if(uemail == ''){
+                alert('이메일을 입력해주세요.')
+                return false;
+            }
+            if(upost == ''){
+                alert('주소를 입력해주세요.')
+                return false;
+            }
+            if(uaddress == ''){
+                alert('주소를 입력해주세요.')
+                return false;
+            }
+            if(uaddress1 == ''){
+                alert('상세주소를 입력해주세요.')
+                return false;
+            }
+        })
+    });//
+</script>
