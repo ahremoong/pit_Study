@@ -1,0 +1,8 @@
+.wrapper {display: flex; justify-content: space-around; width: 100%;}
+.wrapper div:not(:nth-child(2)) {padding: 20px;}
+.findBtnArea , .findDiv, .showDiv  {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+#findText {width: 100%; margin-bottom: 10px; padding: 10px;}
+textarea, .showDiv>div, .showDiv>select {width: 40vw; padding: 10px;}
+textarea, .showDiv>div {height: 80vh; }
+
+.findedText, .textEmphasize {color: red; font-weight: bold;display: inline;}

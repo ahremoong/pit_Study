@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>문자 치환 예제</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="findDiv">
+                <input type="text" placeholder="찾고 싶은 단어를 입력해 주세요" id="findText"/>
+                <textarea placeholder="문단을 입력해 주세요"></textarea>
+            </div>
+            <div class="findBtnArea">
+                <div>
+                    <button type="button" class="goFindText"> 검색하기 </button>
+                </div>
+
+                <div>
+                    <button type="button"> 다시 검색하기 </button>
+                </div>
+            </div>
+            <div class="showDiv">
+                <select name="selectList" class="selectList">
+                    <option selected="selected">결과</option>
+                </select>
+
+                <div><p class="returnArea"></p></div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <!-- <script src="./index.js"></script> -->
+        <script src="./ar_index.js"></script>
+    </body>
+</html>
