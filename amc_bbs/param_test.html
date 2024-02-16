@@ -1,0 +1,18 @@
+<html>
+<script>
+
+function getParams(paramnm){
+	const urlParams = new URLSearchParams(window.location.search);
+	const myParam = urlParams.get(paramnm);
+
+	document.querySelector('#msg').innerHTML = myParam;
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+	getParams('add');
+});
+</script>
+<body>
+<div id="msg"></div>
+</body>
+</html>
