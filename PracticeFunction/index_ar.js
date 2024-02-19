@@ -31,14 +31,14 @@ document.querySelector(".setAmount3Plus").addEventListener("click", () => {
     document.querySelector(".amountResult").textContent = nowTotalAmount;
 })
 
-// 5,000원 + 버튼 클릭 시
+// 5,000원 - 버튼 클릭 시
 document.querySelector(".setAmount1Minus").addEventListener("click", () => {
     let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
     nowTotalAmount -= 5000;
     document.querySelector(".amountResult").textContent = nowTotalAmount;
 })
 
-// 10,000원 + 버튼 클릭 시
+// 10,000원 - 버튼 클릭 시
 document.querySelector(".setAmount2Minus").addEventListener("click", () => {
     let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
     nowTotalAmount -= 10000;
@@ -46,7 +46,7 @@ document.querySelector(".setAmount2Minus").addEventListener("click", () => {
 
 })
 
-// 50,000원 + 버튼 클릭 시
+// 50,000원 - 버튼 클릭 시
 document.querySelector(".setAmount3Minus").addEventListener("click", () => {
     let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
     nowTotalAmount -= 50000;

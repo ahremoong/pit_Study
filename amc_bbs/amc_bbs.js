@@ -306,6 +306,7 @@
 			var oJson = this.getQs();
 			return oJson[pName];
 		},
+		
 		setQsName : function(pName , pVal){
 			var oJson = this.getQs();
 			delete oJson[pName];

@@ -7,17 +7,18 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./amc_bbs_ar.js"></script>
+  <!-- <script src="./amc_bbs.js"></script> -->
 
   <script>
 //1.    
-    let customizedDate = amcbbs._getCustomizeDate(1, 2, 3, 4, 5);
-    console.log("1년, 2개월, 3일, 4시간, 5분 후 날짜:", customizedDate);
+    // let customizedDate = amcbbs._getCustomizeDate(1, 2, 3, 4, 5);
+    // console.log("1년, 2개월, 3일, 4시간, 5분 후 날짜:", customizedDate);
 
 
 //2.
 
-    let mycode = myParam;
-    console.log(mycode) // 오류오류오류오류오류오류 모르겠습니다...!
+    let mycode = amcbbs.getQs('code');
+
   </script>
 </head>
 <body>

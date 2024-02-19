@@ -25,31 +25,11 @@ let amcbbs = {
 		return arrDate;
 	},
 
-
-
-
-/////////////////////////////////////////////////////////
-
-// function getParams(paramnm){
-// 	const urlParams = new URLSearchParams(window.location.search);
-// 	const myParam = urlParams.get(paramnm);
-
-// 	document.querySelector('#msg').innerHTML = myParam;
-// }
-
-// document.addEventListener("DOMContentLoaded",function(){
-// 	getParams('code');
-// });
-
-//getQs 에 수정......모르겠어요
-////////////////////////////////////////////////////////
-
-
 	getQs : function(paramnm){
 		let urlParams = new URLSearchParams(window.location.search);
 		let myParam = urlParams.get(paramnm);
 
-		
+		console.log(myParam)
 	},
 
 
