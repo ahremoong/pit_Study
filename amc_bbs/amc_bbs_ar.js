@@ -24,19 +24,35 @@ let amcbbs = {
 
 		return arrDate;
 	},
-	getQs : function(){
-		var pairs = location.search.slice(1).split("&");
-		var result = {};
-		pairs.forEach(function(pair){
-			pair = pair.split("=");
-			result[pair[0]] = decodeURIComponent(pair[1] || '');
-		});
-		return JSON.parse(JSON.stringify(result));
+
+
+
+
+/////////////////////////////////////////////////////////
+
+// function getParams(paramnm){
+// 	const urlParams = new URLSearchParams(window.location.search);
+// 	const myParam = urlParams.get(paramnm);
+
+// 	document.querySelector('#msg').innerHTML = myParam;
+// }
+
+// document.addEventListener("DOMContentLoaded",function(){
+// 	getParams('code');
+// });
+
+//getQs 에 수정......모르겠어요
+////////////////////////////////////////////////////////
+
+
+	getQs : function(paramnm){
+		let urlParams = new URLSearchParams(window.location.search);
+		let myParam = urlParams.get(paramnm);
+
+		
 	},
-	getQsName : function(pName){
-		var oJson = this.getQs();
-		return oJson[pName];
-	},
+
+
 	setQsName : function(pName , pVal){
 		var oJson = this.getQs();
 		delete oJson[pName];
