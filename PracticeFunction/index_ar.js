@@ -11,11 +11,43 @@ document.querySelector(".setMaxNumberButton").addEventListener("click", () => {
 
 // 5,000원 + 버튼 클릭 시
 document.querySelector(".setAmount1Plus").addEventListener("click", () => {
-    let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
-    nowTotalAmount += 5000;
-    document.querySelector(".amountResult").textContent = nowTotalAmount;
+    let nowTotalAmountR = document.querySelector(".amountResult").textContent; //총 금액이 문자인걸 숫자로 변환한 값
+    let nowTotalAmount = parseInt(nowTotalAmountR.replace(/,/g, ""), 10); //총 금액이 문자인걸 숫자로 변환한 값
+    
+    if(nowTotalAmount >= 100000){
+        nowTotalAmount = 100000
+    }else{
+
+        nowTotalAmount += 5000; //숫자 돈
+    }
+    console.log(nowTotalAmount)
+    
+    let nowTotalAmountRC = nowTotalAmount.toLocaleString(); // 숫자 돈에 콤마 찍고 총 금액에 넣어주기
+    document.querySelector(".amountResult").textContent = nowTotalAmountRC; // 숫자 돈에 콤마 찍고 총 금액에 넣어주기
+
 })
 
+
+// 5,000원 - 버튼 클릭 시
+document.querySelector(".setAmount1Minus").addEventListener("click", () => {
+    let nowTotalAmountR = document.querySelector(".amountResult").textContent; //총 금액이 문자인걸 숫자로 변환한 값
+    let nowTotalAmount = parseInt(nowTotalAmountR.replace(/,/g, ""), 10); //총 금액이 문자인걸 숫자로 변환한 값
+    if(nowTotalAmountR <= 0){
+        nowTotalAmountR = 0
+        document.querySelector(".amountResult").textContent = nowTotalAmountR;
+    }else{
+        nowTotalAmount -= 5000; //숫자 돈
+        console.log(nowTotalAmount)
+        
+        let nowTotalAmountRC = nowTotalAmount.toLocaleString(); // 숫자 돈에 콤마 찍고 총 금액에 넣어주기
+        document.querySelector(".amountResult").textContent = nowTotalAmountRC; // 숫자 돈에 콤마 찍고 총 금액에 넣어주기
+    }
+})
+
+
+
+
+/***********************************************************************************************************/
 // 10,000원 + 버튼 클릭 시
 document.querySelector(".setAmount2Plus").addEventListener("click", () => {
     let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
@@ -28,13 +60,6 @@ document.querySelector(".setAmount2Plus").addEventListener("click", () => {
 document.querySelector(".setAmount3Plus").addEventListener("click", () => {
     let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
     nowTotalAmount += 50000;
-    document.querySelector(".amountResult").textContent = nowTotalAmount;
-})
-
-// 5,000원 - 버튼 클릭 시
-document.querySelector(".setAmount1Minus").addEventListener("click", () => {
-    let nowTotalAmount = parseInt(document.querySelector(".amountResult").textContent, 10);
-    nowTotalAmount -= 5000;
     document.querySelector(".amountResult").textContent = nowTotalAmount;
 })
 
@@ -52,7 +77,6 @@ document.querySelector(".setAmount3Minus").addEventListener("click", () => {
     nowTotalAmount -= 50000;
     document.querySelector(".amountResult").textContent = nowTotalAmount;
 })
-
 
 // 5,000원 MaxButton 버튼 클릭 시
 document.querySelector(".setAmount1MaxNumber").addEventListener("click", () => {
