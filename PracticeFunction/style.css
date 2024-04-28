@@ -1,6 +1,0 @@
-.moneyDiv {display: flex; flex-direction: row; align-items: center; gap: 10px;}
-.userInput > * {height: 3vh;}
-.inputMaxNumber {width: 30vw;}
-.setAmount1MaxNumber, .setAmount2MaxNumber, .setAmount3MaxNumber {display: none; width: 40px;}
-
-.setAmount1Plus, .setAmount2Plus, .setAmount3Plus, .setAmount1Minus, .setAmount1Minus, .setAmount1Minus{width: 20px; height: 20px;}
